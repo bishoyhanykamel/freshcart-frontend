@@ -57,3 +57,7 @@ a , a:hover{
 {
     background-color: var(--light-color) !important;
 }
+
+p {
+    margin-bottom: 0;
+}

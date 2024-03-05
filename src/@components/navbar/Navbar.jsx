@@ -1,14 +1,17 @@
 import { Logo } from "@assets";
 import { Link } from "react-router-dom";
 
+import {HOME_PATH, LOGIN_PATH, PRODUCTS_PATH, REGISTER_PATH, CATEGORIES_PATH, CART_PATH, BRANDS_PATH} from '@routes';
+
+
 export default function Navbar() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to={HOME_PATH}>
             <img src={Logo} alt="" />
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -23,24 +26,39 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link className="nav-link" aria-current="page" to={HOME_PATH}>
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
+                <Link className="nav-link" to={CART_PATH}>
+                  Cart
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={PRODUCTS_PATH}>
+                  Products
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={BRANDS_PATH}>
+                  Brands
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={CATEGORIES_PATH}>
+                  Categories
+                </Link>
               </li>
             </ul>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/login">
+                <Link className="nav-link" aria-current="page" to={LOGIN_PATH}>
                   Login
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/register">
+                <Link className="nav-link" to={REGISTER_PATH}>
                   Register
                 </Link>
               </li>
